@@ -1,0 +1,38 @@
+.m-card {
+    padding: 25px;
+    border-radius: 10px;
+    background: #fff;
+
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-left {
+            display: flex;
+            align-items: center;
+        }
+
+        &--title {
+            font-weight: 700;
+            font-size: 25.5119px;
+            line-height: 33px;
+            color: #000000;
+            margin-bottom: 0;
+        }
+    }
+
+    &-divider {
+        margin: 15px 0 !important;
+    }
+
+    &-body {
+        position: relative;
+    }
+
+    &-loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

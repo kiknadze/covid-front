@@ -1,0 +1,16 @@
+<div class="card-item">
+    <div class="card-item-icon">
+        <mat-icon>{{ icon }}</mat-icon>
+    </div>
+    <div class="card-item-info">
+        <div class="card-item-info--title">
+            <span>{{ title }}</span>
+        </div>
+        <div class="card-item-info-data">
+            <ng-container *ngTemplateOutlet="infoTemplate || defaultInfo; context:{ $implicit: data }"></ng-container>
+            <ng-template #defaultInfo>
+                {{ data | asThousandSeparator }}
+            </ng-template>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div 
+  class="m-card" 
+  [ngStyle]="{'width': width | percentOrPx, 'height': height | percentOrPx}">
+  <div class="m-card-header">
+    <label [ngStyle]="titleStyle" *ngIf="title" class="m-card-header--title">
+      {{ title }}
+    </label>
+  </div>
+  <mat-divider class="m-card-divider" [inset]="true"></mat-divider>
+  <section class="m-card-body">
+    <div *ngIf="loading" class="m-card-loading">
+      <mat-spinner class="m-card-loading-spinner"></mat-spinner>
+    </div>
+    <div [ngStyle]="{visibility: loading ? 'hidden' : 'visible'}">
+      <ng-content select="app-card-body"></ng-content>
+    </div>
+  </section>
+</div>

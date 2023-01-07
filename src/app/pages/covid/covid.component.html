@@ -1,0 +1,27 @@
+<div class="covid">
+    <div class="covid-row">
+        <app-card [title]="'Overview COVID-19 Data'" [loading]="!(overviewData$ | async)" class="covid-row-card">
+            <app-card-body>
+                <div class="overview" *ngIf="(overviewData$ | async) as usaOver">
+                    <app-card-item 
+                        *ngFor="let item of usaOverviewItems" 
+                        [title]="item.title" 
+                        [icon]="item.icon"
+                        [data]="usaOver[item.key]"></app-card-item>
+                </div>
+            </app-card-body>
+        </app-card>
+    </div>
+    <div class="covid-row">
+        <app-card [title]="'Last week Overview'" [loading]="false" class="covid-row-card">
+            <app-card-body>
+                <div class="overview">
+                    <app-chart [chartData]="chartData" *ngIf="!chartLoading; else loading"></app-chart>
+                    <ng-template #loading>
+                        <mat-spinner></mat-spinner>
+                    </ng-template>
+                </div>
+            </app-card-body>
+        </app-card>
+    </div>
+</div>
