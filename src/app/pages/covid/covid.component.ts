@@ -72,7 +72,7 @@ export class CovidComponent implements OnDestroy {
       .subscribe({
         next: (res: State[]) => {
             this.states = res;
-            this.getAllStateData(this.states[this.statePage].code, this.filter);
+            this.getStateCovidData(this.states[this.statePage].code, this.filter);
         },
         error: (e) => {
           console.error(e);
@@ -82,10 +82,10 @@ export class CovidComponent implements OnDestroy {
 
   onScroll(): void {
     if (this.statePage === this.states.length) return;
-    this.getAllStateData(this.states[this.statePage].code, this.filter);
+    this.getStateCovidData(this.states[this.statePage].code, this.filter);
   }
 
-  getAllStateData(state: string, filter: ICovidInfoQueryArgs): void {
+  getStateCovidData(state: string, filter: ICovidInfoQueryArgs): void {
     this.covidService.getStateData(state, filter)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe({
