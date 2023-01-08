@@ -27,7 +27,7 @@ interface IcovidStates {
   imports: [CommonModule, CardComponent, CardBodyComponent, CardItemComponent, ChartComponent, InfiniteScrollModule]
 })
 export class CovidComponent implements OnDestroy {
-  filter: ICovidInfoQueryArgs = { date: '2021-03-01' }
+  filter: ICovidInfoQueryArgs = { date: '2021-03-01' };
   overviewData$: Observable<CovidInfo> = this.covidService.getLastData(this.filter);
   usaOverviewItems: IOverviewItems[] = OVERVIEW_ITEMS;
   chartData: ChartData = CHART_DATA;
