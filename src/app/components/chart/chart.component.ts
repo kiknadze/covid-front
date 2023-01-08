@@ -8,13 +8,14 @@ import { Chart, ChartData } from 'chart.js/auto';
   standalone: true
 })
 export class ChartComponent implements AfterViewInit {
-  @Input() chartData!: ChartData;
+  @Input() chartData: ChartData | undefined;
   @ViewChild('mychart') mychart!: ElementRef;
   chart!: Chart;
 
   constructor() { }
 
   ngAfterViewInit(): void {
+    if (!this.chartData) return;
     const canvas: HTMLCanvasElement = this.mychart.nativeElement;
     const context: any = canvas.getContext('2d');
     this.chart = new Chart(context, {
