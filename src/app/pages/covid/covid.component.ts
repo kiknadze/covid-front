@@ -81,6 +81,7 @@ export class CovidComponent implements OnDestroy {
   }
 
   onScroll(): void {
+    if (this.statePage === this.states.length) return;
     this.getAllStateData(this.states[this.statePage].code, this.filter);
   }
 
