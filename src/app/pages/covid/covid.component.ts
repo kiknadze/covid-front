@@ -24,7 +24,10 @@ interface IcovidStates {
   templateUrl: './covid.component.html',
   styleUrls: ['./covid.component.scss'],
   standalone: true,
-  imports: [CommonModule, CardComponent, CardBodyComponent, CardItemComponent, ChartComponent, InfiniteScrollModule]
+  imports: [
+    CommonModule, CardComponent, CardBodyComponent, 
+    CardItemComponent, ChartComponent, InfiniteScrollModule
+  ]
 })
 export class CovidComponent implements OnDestroy {
   filter: ICovidInfoQueryArgs = { date: '2021-03-01' };
@@ -96,7 +99,7 @@ export class CovidComponent implements OnDestroy {
         error: (e) => {
           console.error(e);
         }
-      })
+      });
   }
 
   ngOnDestroy(): void {

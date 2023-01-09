@@ -5,7 +5,10 @@
     [infiniteScrollThrottle]="50"
     (scrolled)="onScroll()">
     <div class="covid-row">
-        <app-card [title]="'Overview COVID-19 Data'" [loading]="!(overviewData$ | async)" class="covid-row-card">
+        <app-card 
+            [title]="'Overview COVID-19 Data'" 
+            [loading]="!(overviewData$ | async)" 
+            class="covid-row-card">
             <app-card-body>
                 <div class="overview" *ngIf="(overviewData$ | async) as usaOver">
                     <app-card-item 

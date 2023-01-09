@@ -19,5 +19,5 @@ export class ThousandSeparatorPipe implements PipeTransform {
       }
 
       return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    }
+    };
 }
