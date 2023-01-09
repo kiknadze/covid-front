@@ -32,7 +32,7 @@ export class CovidComponent implements OnDestroy {
   usaOverviewItems: IOverviewItems[] = OVERVIEW_ITEMS;
   chartData: ChartData = CHART_DATA;
   chartLoading: boolean = true;
-  states: any[] = [];
+  states: State[] = [];
   covidStates: IcovidStates[] = [];
   statePage: number = 0;
 
